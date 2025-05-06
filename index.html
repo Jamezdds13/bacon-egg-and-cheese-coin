@@ -15,6 +15,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      transition: background 0.3s ease-in-out;
     }
 
     header {
@@ -26,83 +27,134 @@
 
     header img {
       width: 120px;
+      transition: transform 0.3s ease;
     }
 
-    .logo {
-      margin-top: 1.5rem;
-      max-width: 180px;
-      width: 60%;
+    header img:hover {
+      transform: rotate(15deg);
     }
 
     .mascot {
       margin-top: 2rem;
       max-width: 300px;
       width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     h1 {
       font-size: 3rem;
       margin: 1rem 0 0.5rem;
+      font-weight: bold;
+      color: #d85800;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     p.subtitle {
       font-size: 1.3rem;
       margin-bottom: 2rem;
+      font-style: italic;
+      color: #5f3d30;
     }
 
     section {
       max-width: 700px;
       padding: 2rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 2rem;
     }
 
     .coin-address {
-      font-size: 2rem;
+      font-size: 1.5rem;
       margin: 2rem 0;
       color: #c84e00;
       font-weight: bold;
+      text-transform: uppercase;
     }
 
     .buttons a {
       display: inline-block;
       margin: 0.5rem;
-      padding: 0.8rem 1.5rem;
+      padding: 1rem 2rem;
       background-color: #ffb347;
       color: #fff;
       text-decoration: none;
-      border-radius: 10px;
-      transition: background 0.3s;
+      border-radius: 30px;
+      font-size: 1.2rem;
+      transition: background 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
 
     .buttons a:hover {
       background-color: #ff9a2e;
+      transform: scale(1.1);
+    }
+
+    .tokenomics {
+      background: #ffebd4;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tokenomics h2 {
+      font-size: 2rem;
+      color: #d85800;
+    }
+
+    .tokenomics ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tokenomics ul li {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
     }
 
     footer {
       margin-top: auto;
       padding: 2rem 1rem;
-      font-size: 0.9rem;
+      font-size: 1rem;
       color: #a78b71;
+      background: #ffe5b4;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
     }
+
   </style>
 </head>
 <body>
   <header>
-    <img src="https://files09.oaiusercontent.com/file-9S8m86t7GyDYBBjYNQSKxw?se=2025-05-06T01%3A02%3A25Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3DChatGPT%2520Image%2520May%25202%252C%25202025%252C%252007_45_29%2520PM.png&sig=Q%2Ba7lJzLN/gtxnFKlniSb1NIytyp4sryC%2B4ygie0qeo%3D" alt="Bacon Egg and Cheese Logo">
+    <img src="https://i.postimg.cc/j55bScNL/Chat-GPT-Image-May-2-2025-07-45-29-PM.png" alt="Bacon Egg and Cheese Logo">
   </header>
 
   <section>
-    <img class="logo" src="https://files09.oaiusercontent.com/file-9S8m86t7GyDYBBjYNQSKxw?se=2025-05-06T01%3A02%3A25Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3DChatGPT%2520Image%2520May%25202%252C%25202025%252C%252007_45_29%2520PM.png&sig=Q%2Ba7lJzLN/gtxnFKlniSb1NIytyp4sryC%2B4ygie0qeo%3D" alt="BEC Coin Logo">
-
     <h1>Bacon Egg and Cheese</h1>
     <p class="subtitle">The breakfast of degen champions. Meme coin. Vibes only. Coming soon.</p>
 
-    <img class="mascot" src="https://files09.oaiusercontent.com/file-9S8m86t7GyDYBBjYNQSKxw?se=2025-05-06T01%3A02%3A25Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3DChatGPT%2520Image%2520May%25202%252C%25202025%252C%252007_45_29%2520PM.png&sig=Q%2Ba7lJzLN/gtxnFKlniSb1NIytyp4sryC%2B4ygie0qeo%3D" alt="$BEC Mascot" />
+    <img class="mascot" src="https://i.postimg.cc/j55bScNL/Chat-GPT-Image-May-2-2025-07-45-29-PM.png" alt="$BEC Mascot" />
 
     <div class="coin-address">COIN ADDRESS: COMING SOON</div>
 
     <div class="buttons">
       <a href="https://x.com/BACON_EGG_CHEZ" target="_blank">🐦 Twitter</a>
       <a href="https://t.me/+R6I1ZQZ8rNAyZjBh" target="_blank">💬 Telegram</a>
+    </div>
+
+    <div class="tokenomics">
+      <h2>Tokenomics</h2>
+      <ul>
+        <li>50% Cheese 🧀</li>
+        <li>20% Bacon 🥓</li>
+        <li>10% Egg 🥚</li>
+        <li>15% Cool Factor 😎</li>
+        <li>5% Meme Energy 🔥</li>
+      </ul>
     </div>
   </section>
 
@@ -111,3 +163,4 @@
   </footer>
 </body>
 </html>
+
