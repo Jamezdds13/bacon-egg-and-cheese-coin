@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bacon Egg and Cheese Coin</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -72,10 +73,9 @@
       color: #c84e00;
       font-weight: bold;
       text-transform: uppercase;
-      word-wrap: break-word;
     }
 
-    .buttons a {
+    .buttons a, .connect-wallet {
       display: inline-block;
       margin: 0.5rem;
       padding: 1rem 2rem;
@@ -86,9 +86,10 @@
       font-size: 1.2rem;
       transition: background 0.3s ease;
       box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
     }
 
-    .buttons a:hover {
+    .buttons a:hover, .connect-wallet:hover {
       background-color: #ff9a2e;
       transform: scale(1.1);
     }
@@ -126,7 +127,6 @@
       text-align: center;
       box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
     }
-
   </style>
 </head>
 <body>
@@ -140,11 +140,12 @@
 
     <img class="mascot" src="https://i.postimg.cc/j55bScNL/Chat-GPT-Image-May-2-2025-07-45-29-PM.png" alt="$BEC Mascot" />
 
-    <div class="coin-address">COIN ADDRESS: 3TAw4BnqrWGMcnXzxmjRUgXtJfyRcxoZgC5HPrVwpump</div>
+    <div class="coin-address">COIN ADDRESS: COMING SOON</div>
 
     <div class="buttons">
       <a href="https://x.com/BACON_EGG_CHEZ" target="_blank">🐦 Twitter</a>
       <a href="https://t.me/+R6I1ZQZ8rNAyZjBh" target="_blank">💬 Telegram</a>
+      <div class="connect-wallet" onclick="connectWallet()">🔗 Connect Wallet</div>
     </div>
 
     <div class="tokenomics">
@@ -162,5 +163,20 @@
   <footer>
     <p>&copy; 2025 Bacon Egg and Cheese Coin. Not financial advice. Just vibes. Just breakfast.</p>
   </footer>
+
+  <script>
+    async function connectWallet() {
+      if (window.ethereum) {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          alert("Connected wallet: " + accounts[0]);
+        } catch (error) {
+          alert("Connection failed: " + error.message);
+        }
+      } else {
+        alert("MetaMask is not installed. Please install it to connect your wallet.");
+      }
+    }
+  </script>
 </body>
 </html>
