@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bacon Egg and Cheese Coin</title>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
   <style>
     body {
       margin: 0;
@@ -145,7 +144,7 @@
     <div class="buttons">
       <a href="https://x.com/BACON_EGG_CHEZ" target="_blank">🐦 Twitter</a>
       <a href="https://t.me/+R6I1ZQZ8rNAyZjBh" target="_blank">💬 Telegram</a>
-      <div class="connect-wallet" onclick="connectWallet()">🔗 Connect Wallet</div>
+      <div class="connect-wallet" onclick="connectWallet()">🔗 Connect Phantom Wallet</div>
     </div>
 
     <div class="tokenomics">
@@ -166,17 +165,26 @@
 
   <script>
     async function connectWallet() {
-      if (window.ethereum) {
+      if (window.solana && window.solana.isPhantom) {
         try {
-          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          alert("Connected wallet: " + accounts[0]);
-        } catch (error) {
-          alert("Connection failed: " + error.message);
+          const resp = await window.solana.connect();
+          alert("Connected to Phantom wallet:\n" + resp.publicKey.toString());
+        } catch (err) {
+          alert("Connection failed: " + err.message);
         }
       } else {
-        alert("MetaMask is not installed. Please install it to connect your wallet.");
+        alert("Phantom Wallet not found. Please install it from https://phantom.app");
       }
     }
+
+    // Optional: Detect Phantom on load
+    window.addEventListener('load', () => {
+      if (window.solana && window.solana.isPhantom) {
+        console.log("Phantom wallet is ready to connect.");
+      } else {
+        console.log("Phantom wallet not detected.");
+      }
+    });
   </script>
 </body>
 </html>
